@@ -15,7 +15,7 @@ public class Matchmaking {
         join.addAll(girls);
 
 
-        for (int i = 0; i < boys.size(); i++) {
+        for (int i = 0; i < boys.size(); i+= +2) {
             join.add(boys.get(i));
         }
 
