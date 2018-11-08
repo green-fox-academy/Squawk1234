@@ -1,7 +1,7 @@
-/*import java.util.*;
+import java.util.*;
 
-public class Candyshop{
-    public static void main(String... args){
+public class Candyshop {
+    public static void main(String... args) {
         ArrayList<Object> arrayList = new ArrayList<Object>();
         arrayList.add("Cupcake");
         arrayList.add(2);
@@ -14,14 +14,21 @@ public class Candyshop{
         // Create a method called sweets() which takes the list as a parameter.
 
 
+        System.out.println(sweets(arrayList));
 
-           System.out.println(sweets(arrayList));
-
-
-        public static ArrayList <String>  sweets (List<String> candyexe) ;{
-
-        }
-        // Expected output: "Cupcake", "Croissant", "Brownie", "Ice cream"
     }
+
+    public static ArrayList<Object> sweets(ArrayList<Object> arrayList) {
+
+        arrayList.set(1, "Croissant");
+        arrayList.set(3, "Ice cream");
+        return arrayList;
+    }
+
+
+    // Expected output: "Cupcake", "Croissant", "Brownie", "Ice cream"
 }
-*/
+
+
+
+

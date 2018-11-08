@@ -6,13 +6,7 @@ public class AppendLetter {
         // Create a method called "appendA()" that adds "a" to every string in the "far" list.
         // The parameter should be a list.
         System.out.println(appendA(far));
-
-
     }
-
-
-    //
-
 
     public static ArrayList<String> appendA(List<String> exe) {
 
