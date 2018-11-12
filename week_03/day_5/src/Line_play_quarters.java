@@ -1,45 +1,40 @@
 import javax.swing.*;
+import java.awt.*;
+
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
+
+import javax.swing.*;
 
 import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FourRectangles {
-
+public class Line_play_quarters {
     public static void mainDraw(Graphics graphics) {
-        for (int i = 0; i < 4; i++) {
-            graphics.setColor(new Color(rgb(), rgb(), rgb()));
-            graphics.fillRect(randomPos(), randomPos(), randomSize(), randomSize());
+        //    drawMe(graphics, HEIGHT, WIDTH, 0, 0);
+        int var = 0;
+
+
+
+
+       for (int j = 0; j < 2; j++) {
+            drawMe(graphics, HEIGHT / var, 0, 0);
+            drawMe(graphics, HEIGHT / var, 0, HEIGHT/var);
+            drawMe(graphics, HEIGHT / var, HEIGHT/var, 0);
+            drawMe(graphics, HEIGHT / var, HEIGHT/var, HEIGHT/var);
         }
+
     }
 
-    public static int randomPos() {
-        int min = 0;
-        int max = 280;
-        int randomPosNum = (int) (Math.random() *
-                (max - min) + 1) + min;
+    public static void drawMe(Graphics graphics, int size, int x, int y) {
+        for (int i = 0; i <= size; i += 20) {
+            graphics.setColor(new Color(128, 0, 128));
+            graphics.drawLine(x + i, y, size + x, y + i);
+            graphics.setColor(Color.green);
+            graphics.drawLine(x, y + i, x + i, size + y);
+        }
 
-        return randomPosNum;
     }
-
-    public static int randomSize() {
-        int min = 10;
-        int max = 40;
-        int randomNum = (int) (Math.random() *
-                (max - min) + 1) + min;
-
-        return randomNum;
-    }
-
-    public static int rgb() {
-        int min = 0;
-        int max = 255;
-        int rgbNum = (int) (Math.random() *
-                (max - min) + 1) + min;
-
-        return rgbNum;
-    }
-
 
     // Don't touch the code below
     static int WIDTH = 320;

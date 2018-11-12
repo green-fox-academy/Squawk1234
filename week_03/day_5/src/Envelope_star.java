@@ -1,32 +1,34 @@
 import javax.swing.*;
+import java.awt.*;
+
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
+
+import javax.swing.*;
 
         import java.awt.*;
 
         import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FunctionToCenter {
+public class Envelope_star {
     public static void mainDraw(Graphics graphics) {
-        // Create a line drawing function that takes 2 parameters:
-        // The x and y coordinates of the line's starting point
-        // and draws a line from that point to the center of the canvas.
-        // Fill the canvas with lines from the edges, every 20 px, to the center.
 
-        linedraw(0,0, graphics);
-    }
 
-    public static void linedraw (int x, int y, Graphics graphics){
 
-        for (int h = 0; h<=WIDTH; h +=WIDTH/16) {
-            graphics.drawLine(x,y + h, WIDTH/2, HEIGHT/2);
-            graphics.drawLine(x + h ,y, WIDTH/2, HEIGHT/2);
-            graphics.drawLine(x + WIDTH - h ,y +HEIGHT, WIDTH/2, HEIGHT/2);
-            graphics.drawLine(x + WIDTH,y+ HEIGHT - h, WIDTH/2, HEIGHT/2);
+        int x = 40;
+        int y= 40;
+
+        for(int i=0; i<=260;  i += 20) {
+            graphics.setColor(new Color(128, 0, 128));
+            graphics.drawLine(x + i, 20, 310, y + i);
+            graphics.setColor(Color.green);
+            graphics.drawLine(20 , y + i, x + i, 310);
         }
+
     }
 
     // Don't touch the code below
-    static int WIDTH = 400;
-    static int HEIGHT = 400;
+    static int WIDTH = 320;
+    static int HEIGHT = 320;
 
     public static void main(String[] args) {
         JFrame jFrame = new JFrame("Drawing");
