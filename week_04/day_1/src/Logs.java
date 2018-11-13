@@ -17,12 +17,23 @@ public class Logs {
         try {
             Path filePath = Paths.get("./log.txt");
             List<String> lines = Files.readAllLines(filePath);
+            List<String> unique = new ArrayList();
 
 
             for (int i = 0; i < lines.size(); i++) {
                 String[] output = lines.get(i).split(" ");
                 System.out.println(output[8]);
+
+                for (int j = 0; j < output.length; j++) {
+                    if (output[i] != unique.contains() ) {
+                        System.out.println(unique);
+
+                    };
+
+                }
             }
+
+
         } catch (Exception e) {
             System.out.println("Uh-oh, could not write the file!");
         }
