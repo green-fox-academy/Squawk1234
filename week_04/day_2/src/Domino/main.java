@@ -15,13 +15,10 @@ public class main {
         List<Domino> newDominos = new ArrayList<>();
 
 
-
-            for (int i = 0; i < dominos.size(); i++) {
-
-                //   System.out.println(dominoNum.get(i));
-
+        for (int j = 0; j < dominoSize; j++) {
+            for (int i = 1; i < dominos.size(); i++) {
                 if (dominos.get(i).getLeftSide() == dominos.get(i + 1).getRightSide()) {
-
+                    newDominos.add();
                 }
 
                 System.out.println(dominos.get(i));
