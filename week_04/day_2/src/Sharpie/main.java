@@ -2,14 +2,34 @@ package Sharpie;
 
 public class main {
     public static void main(String[] args) {
-        Sharpie print = new Sharpie();
+        Sharpie red = new Sharpie("Red", 100);
+        Sharpie blue = new Sharpie("Blue", 100);
+        Sharpie black = new Sharpie("Black", 100);
 
-        print.color = "Red";
-        print.width = 100;
+        black.inkAmount = 0;
 
-        print.use();
+        SharpieSet sharpieSet = new SharpieSet();
 
-        System.out.println(print.inkAmount);
+        sharpieSet.add(red);
+        sharpieSet.add(blue);
+        sharpieSet.add(black);
+
+        red.use();
+
+        System.out.println(red.inkAmount);
+
+
+      System.out.println(sharpieSet.countUsable());
+
+
+
+
+
+
+
+
+
+
 
 
     }

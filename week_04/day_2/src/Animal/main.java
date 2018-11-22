@@ -6,7 +6,8 @@ public class main {
 
         Animal fox = new Animal();
         Animal tiger = new Animal();
-        Animal lion = new Animal();
+       Animal lion = new Animal();
+
 
         lion.drink();
         System.out.println("Lion thirst: " + lion.thirst);
@@ -18,10 +19,6 @@ public class main {
 
         fox.eat();
         System.out.println("Fox hunger: " + fox.hunger);
-
-
-
-
 
     }
 

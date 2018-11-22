@@ -1,4 +1,4 @@
-package Domino;
+/* package Domino;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ public class main {
         List<Domino> newDominos = new ArrayList<>();
 
 
-        for (int j = 0; j < dominoSize; j++) {
+     for (int j = 0; j < dominoSize; j++) {
             for (int i = 1; i < dominos.size(); i++) {
                 if (dominos.get(i).getLeftSide() == dominos.get(i + 1).getRightSide()) {
                     newDominos.add();

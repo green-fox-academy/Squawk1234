@@ -11,6 +11,7 @@ public class String3 {
         }
         return addingWord.charAt(0) + "*" + addMe(addingWord.substring(1));
     }
+
 }
 
 
