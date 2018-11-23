@@ -15,25 +15,24 @@ public class Logs {
 
 
         try {
-        Path filePath = Paths.get("./log.txt");
-        List<String> lines = Files.readAllLines(filePath);
-        List<String> unique = new ArrayList();
+            Path filePath = Paths.get("./log.txt");
+            List<String> lines = Files.readAllLines(filePath);
+            List<String> unique = new ArrayList();
 
 
-
-        for (int i = 0; i < lines.size(); i++) {
-            String[] output = lines.get(i).split(" ");
-            if (!unique.contains(output[8])) {
-                unique.add(output[8]);
+            for (int i = 0; i < lines.size(); i++) {
+                String[] output = lines.get(i).split(" ");
+                if (!unique.contains(output[8])) {
+                    unique.add(output[8]);
+                }
             }
+            System.out.println(unique);
+
+
+        } catch (Exception e) {
+            System.out.println("Uh-oh, could not write the file!");
         }
-        System.out.println(unique);
 
 
-    } catch (Exception e) {
-        System.out.println("Uh-oh, could not write the file!");
     }
-
-
-}
 }
