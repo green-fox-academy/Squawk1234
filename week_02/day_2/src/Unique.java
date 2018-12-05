@@ -7,11 +7,11 @@ public class Unique {
 
         //  Example
 
-        double[] uniqueArray = {1, 11, 34, 11, 52, 61, 1, 34};
+/*       double[] uniqueArray = {1, 11, 34, 11, 52, 61, 1, 34};
 
 
 
-    }
+    } */
 
 
 
