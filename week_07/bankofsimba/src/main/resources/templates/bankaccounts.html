@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>BankAccounts</title>
+    <meta charset="utf-8"/>
+</head>
+
+<table class="mytable">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Account owner</th>
+        <th>Available balance</th>
+        <th>Account currency</th>
+        <th>Owner type</th>
+        <th>isKing</th>
+        <th>TickMe</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="account, status : ${accounts}" th:for="${status.index}"
+        th:style="${account.isKing() ? 'color:blue' : 'color:black'}">
+        <td th:text="${status.index + 1}"></td>
+        <td th:text="${account.name}"></td>
+        <td th:text="${#numbers.formatDecimal(account.balance,0,2)}"></td>
+        <td th:text="${account.currancy}"></td>
+        <td th:text="${account.animalType}"></td>
+        <td th:text="${account.isKing() ? 'King' : '' }"
+            th:style="${account.isKing() ? 'display:inline' : 'display:none'}"></td>
+    </tr>
+    </tbody>
+
+</table>
+<form th:action="@{/bankaccounts}" th:method="POST" th:object="${account}">
+    <input type="submit" value="Raise balance">
+</form>
+
+
+</body>
+</html>
