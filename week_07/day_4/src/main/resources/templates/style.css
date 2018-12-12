@@ -1,0 +1,55 @@
+body {
+    margin: 0px;
+    background-image: url("topography.png");
+    font-family: consolas, courier;
+}
+
+h1, h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.div_body {
+    margin: auto 10% auto 10%;
+}
+
+.pink {
+    color: #ff0099;
+}
+
+nav {
+    margin: 0px auto 100px auto;
+    padding: 0px;
+    background-color: #333333;
+    overflow: hidden;
+    background-image: url("aperture.svg");
+    background-repeat: no-repeat;
+    background-position: 10% 90%;
+    background-position-y: center;
+}
+
+ul {
+    list-style-type: none;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+li {float: right;
+    
+}
+
+li a {
+    display: block;
+    color: #ff0099;
+    padding: 15px;
+    
+}
+
+.div_middle {
+    text-align: center;
+}
+
+.div_bottom .div_middle {
+    font-family: consolas, courier;
+}

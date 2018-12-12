@@ -14,7 +14,6 @@ public class HelloWebController {
     public String greeting(Model model, @RequestParam String name) {
 
         Greeting greeting = new Greeting("blabla");
-
         model.addAttribute("name", name);
         model.addAttribute("id", greeting.getId());
         return "greeting";
