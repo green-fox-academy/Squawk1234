@@ -49,11 +49,11 @@ public class BankAccountController {
 
     @GetMapping("/containsking")
     public String getContainsString(Model model) {
-        model.addAttribute("account", accounts.stream()
-                //            .filter(item -> item.getName().contains("Nike") || item.getDescription().contains("Nike"))
-                .filter(item -> item.toString().contains("King"))
-                .collect(Collectors.toList()));
-        return "bankaccounts";
+            model.addAttribute("account", accounts.stream()
+                    //            .filter(item -> item.getName().contains("Nike") || item.getDescription().contains("Nike"))
+                    .filter(item -> item.toString().contains("King"))
+                    .collect(Collectors.toList()));
+            return "bankaccounts";
     }
 
 
