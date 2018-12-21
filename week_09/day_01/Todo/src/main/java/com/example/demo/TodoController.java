@@ -19,8 +19,11 @@ public class TodoController {
     }
 
     @GetMapping(value = {"", "/", "/list"})
-    public String list(Model model, @RequestParam(name = "isActive", required = false) Boolean isActive) {
-        if (isActive == null) {
+    public String list(Model model, @RequestParam(name = "isActive", required = false) Boolean isActive,
+                       @RequestParam(name = "searchText", required = false) String search) {
+        if (search != null) {
+            model.addAttribute("todos", repository.findAllByTitle(search));
+        }  else if (isActive == null) {
             model.addAttribute("todos", repository.findAll());
         } else if (isActive) {
             model.addAttribute("todos", repository.findByDone(!isActive));
@@ -58,23 +61,31 @@ public class TodoController {
         return "redirect:/todo";
     }
 
-     @GetMapping("/{id}/edittodo")
-    public String editInput(@PathVariable Long id, Model model){
+    @GetMapping("/{id}/edittodo")
+    public String editInput(@PathVariable Long id, Model model) {
         model.addAttribute("todo", repository.findById(id));
         return "edittodo";
-     }
-
-     @PostMapping("/{id}/editSave")
-    public String editInput(@ModelAttribute(name = "todo") ToDo todo){
-         repository.save(todo);
-    return "redirect:/todo";
     }
 
-    @GetMapping("/{title}/search")
-    public String searchInput(@PathVariable String title, Model model){
-        model.addAttribute("todo", repository.findAllByTitle(title));
+    @PostMapping("/{id}/editSave")
+    public String editInput(@ModelAttribute(name = "todo") ToDo todo) {
+        repository.save(todo);
         return "redirect:/todo";
     }
+
+    @GetMapping("/addAssignee")
+    public String getAssignee(Model model, @ModelAttribute(name = "todos") ToDo todo) {
+        model.addAttribute("todo", todo);
+        return "addAssignee";
+    }
+
+/*    @GetMapping("/{title}/search")
+    public String searchInput(@RequestParam String title, Model model) {
+        if (title != null) {
+            model.addAttribute("todo", repository.findAllByTitle(title));
+        }
+        return "redirect:";
+    } */
 
 
 }

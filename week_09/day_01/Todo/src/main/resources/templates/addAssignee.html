@@ -5,17 +5,16 @@
     <meta charset="UTF-8">
     <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
 
-    <title>Add new Task</title>
+    <title>Assigne the task</title>
 </head>
 <body>
 <div align="center">
-    <h1>Add new Task:</h1>
+    <h1>Assignee for Task</h1>
     <form th:action="@{add}" method="post" th:object="${todo}">
-        <input type="text" th:field="*{title}">
-        <br>Is it Urgent?
-        <input type="checkbox" th:field="*{urgent}">
+
+        <br>Name: <input type="text" th:field="${todo.title}">   Email address: <input type="email" th:field="${todo.title}">
         <br> <br>
-        <a th:href="@{/todo/}" class="btn btn-warning">Cancel</a>   <input class="btn btn-success" type="submit" value="Add new Task">
+        <a th:href="@{/todo/}" class="btn btn-warning">Cancel</a> <input class="btn btn-success" type="submit" value="Add new Task">
     </form>
 
 
